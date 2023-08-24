@@ -165,12 +165,16 @@ const NavBar = () => {
                 <ListItem button  component={Link} to="/">
                 		<ListItemText primary="Home" />
                 </ListItem>
-                <ListItem button  component={Link} to="/">
+                <ListItem button  component={Link} to="/kendraHome">
                         <ListItemText primary="AWS Kendra Service" />
                 </ListItem>
                 <ListItem>
                     <Grid item data-testid="documentation">
-                        <ListItemButton onClick={handleClick}>
+                        <ListItemButton
+                        data-testid="kendraIndexes"
+                        component={Link}
+                        to="/kendraDocumentation"
+                        onClick={handleClick}>
                             {/*List item icon can placed here*/}
                             <ListItemText primary="Documentation" />
                         </ListItemButton>
@@ -178,7 +182,11 @@ const NavBar = () => {
                 </ListItem>
                 <ListItem>
                     <Grid item data-testid="documentation">
-                        <ListItemButton onClick={handleClick}>
+                        <ListItemButton
+                        data-testid="kendraIndexes"
+                        component={Link}
+                        to="/kendraIndexes"
+                        onClick={handleClick}>
                             {/*List item icon can placed here*/}
                             <ListItemText primary="Manage Indices " />
                         </ListItemButton>

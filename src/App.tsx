@@ -11,7 +11,10 @@ function App() {
       <Navbar />
         <Container maxWidth={"xl"} style={{ paddingTop: 15, paddingRight: 40, paddingLeft: 40 }}>
             <Routes>
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/kendraHome" element={<Home />} />
+                <Route path='/kendraDocumentation' element={<h1>AWS Kendra Documentation</h1>} />
+                <Route path='/kendraIndexes' element={<h1>AWS Kendra Indexes</h1>} />
             </Routes>
         </Container>
     </div>

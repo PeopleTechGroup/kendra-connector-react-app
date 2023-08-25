@@ -204,20 +204,23 @@ const NavBar = () => {
                         </ListItemButton>
                         <Collapse in={expand} timeout="auto" unmountOnExit>
                             <List component="div" disablePadding>
-                              <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemText primary="Alfresco" />
+                            </ListItemButton>
+                            <ListItemButton sx={{ pl: 4 }}>
 {/*                                 <ListItemIcon> */}
 {/*                                   <StarBorder /> */}
 {/*                                 </ListItemIcon> */}
                                 <ListItemText primary="Github" />
-                              </ListItemButton>
-                              <ListItemButton sx={{ pl: 4 }}>
+                            </ListItemButton>
+                            <ListItemButton sx={{ pl: 4 }}>
                                 <ListItemText primary="ServiceNow" />
-                              </ListItemButton>
+                            </ListItemButton>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemText primary="SharePoint" />
+                            </ListItemButton>
                               <ListItemButton sx={{ pl: 4 }}>
-                                <ListItemText primary="Alfresco" />
-                              </ListItemButton>
-                              <ListItemButton sx={{ pl: 4 }}>
-                                <ListItemText primary="S3" />
+                                  <ListItemText primary="S3" />
                               </ListItemButton>
                             </List>
                         </Collapse>

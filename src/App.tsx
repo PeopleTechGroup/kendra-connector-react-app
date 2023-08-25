@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import { Container } from "@material-ui/core";
 import { Route, Routes } from "react-router-dom";
+import Documentation from "./components/Documentation"
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/kendraHome" element={<Home />} />
-                <Route path='/kendraDocumentation' element={<h1>AWS Kendra Documentation</h1>} />
+                <Route path='/kendraDocumentation' element={<Documentation />} />
                 <Route path='/kendraIndexes' element={<h1>AWS Kendra Indexes</h1>} />
             </Routes>
         </Container>

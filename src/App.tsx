@@ -5,7 +5,9 @@ import Home from "./components/Home";
 import KendraLandingPage from "./components/KendraLandingPage";
 import { Container } from "@material-ui/core";
 import { Route, Routes } from "react-router-dom";
-import Documentation from "./components/Documentation"
+import Documentation from "./components/Documentation";
+import Onboarding from "./components/Onboarding";
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/kendraHome" element={<KendraLandingPage />} />
                 <Route path='/kendraDocumentation' element={<Documentation />} />
+                <Route path='/onboardingProcess' element={<Onboarding />} />
                 <Route path='/kendraIndexes' element={<h1>AWS Kendra Indexes</h1>} />
             </Routes>
         </Container>

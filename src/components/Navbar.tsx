@@ -180,6 +180,18 @@ const NavBar = () => {
                         </ListItemButton>
                     </Grid>
                 </ListItem>
+                 <ListItem>
+                      <Grid item data-testid="Onboarding Process">
+                          <ListItemButton
+//                           data-testid="kendraIndexes"
+                          component={Link}
+                           to="/onboardingProcess"
+                           onClick={handleClick}>
+                             {/*List item icon can placed here*/}
+                           <ListItemText primary="Onboarding" />
+                           </ListItemButton>
+                           </Grid>
+                </ListItem>
                 <ListItem>
                     <Grid item data-testid="documentation">
                         <ListItemButton

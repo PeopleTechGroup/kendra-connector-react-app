@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, Grid, Typography, Link } from "@material-ui/core";
-import Footer from "./Footer"
+import Footer from "./Footer";
 
 const Step = ({ title, description }) => (
   <Grid item xs={12} style={{ padding: "20px 0" }}>
@@ -9,6 +9,12 @@ const Step = ({ title, description }) => (
     </Typography>
     <Typography>{description}</Typography>
   </Grid>
+);
+
+const Emoji = ({ label, symbol }) => (
+  <span role="img" aria-label={label}>
+    {symbol}
+  </span>
 );
 
 const Onboarding = () => {
@@ -26,16 +32,19 @@ const Onboarding = () => {
                 Follow the mentioned links:
                 <ul>
                   <li>
+                    <Emoji label="Hand Pointer" symbol="👉" />{" "}
                     <Link href="https://aws.amazon.com/kendra/connectors/" target="_blank">
                       AWS Kendra Connectors
                     </Link>
                   </li>
                   <li>
+                    <Emoji label="Hand Pointer" symbol="👉" />{" "}
                     <Link href="https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html" target="_blank">
                       Data Sources in Kendra
                     </Link>
                   </li>
                   <li>
+                    <Emoji label="Hand Pointer" symbol="👉" />{" "}
                     <Link
                       href="https://catalog.us-east-1.prod.workshops.aws/workshops/df64824d-abbe-4b0d-8b31-8752bceabade/en-US/000-introduction"
                       target="_blank"
@@ -53,6 +62,7 @@ const Onboarding = () => {
               <>
                 Clone the Java SpringBoot application repository:
                 <br />
+                <Emoji label="Hand Pointer" symbol="👉" />{" "}
                 <Link href="https://github.com/orgs/PeopleTechGroup/repositories" target="_blank">
                   Java SpringBoot Repository
                 </Link>
@@ -65,8 +75,14 @@ const Onboarding = () => {
               <>
                 Clone the React app repository and install dependencies:
                 <ul>
-                  <li>Clone: <Link href="https://github.com/PeopleTechGroup/kendra-connector-react-app" target="_blank">React App Repository</Link></li>
-                  <li>Install dependencies:
+                  <li>
+                    <Emoji label="Hand Pointer" symbol="👉" /> Clone:{" "}
+                    <Link href="https://github.com/PeopleTechGroup/kendra-connector-react-app" target="_blank">
+                      React App Repository
+                    </Link>
+                  </li>
+                  <li>
+                    <Emoji label="Hand Pointer" symbol="👉" /> Install dependencies:
                     <pre>
                       npm install @mui/material @emotion/react @emotion/styled --legacy-peer-deps<br />
                       npm install @mui/icons-material --legacy-peer-deps<br />
@@ -91,10 +107,17 @@ const Onboarding = () => {
             description="Submit a join request on tree.taiga.io"
           />
         </Grid>
-         <Grid item xs={12} style={{ padding: 20 }}>
-                        <Footer/>
-                    </Grid>
       </CardContent>
+      <Grid item xs={12} style={{ padding: 20 }}>
+        <Footer />
+      </Grid>
+      <style>{`
+        /* Remove bullets from the ul */
+        ul {
+          list-style-type: none;
+          padding-left: 0;
+        }
+      `}</style>
     </Card>
   );
 };

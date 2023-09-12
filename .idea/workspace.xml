@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a4d588-032a-4b9b-8a84-53fef4c10750" name="Changes" comment="">
+    <list default="true" id="7936a0ef-8a4a-4bdb-9b9a-27fe1c0e10d2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Onboarding.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Onboarding.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Documentation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Documentation.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +22,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2UcZy9RkVDxE4DbZhaXviTRWgzl" />
+  <component name="ProjectId" id="2VGHx9VIeYDLhOrfKIUBXhL4Bxx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,22 +31,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/shreya/Desktop/kendra-connector-react-app/src/components"
+    "last_opened_file_path": "/Users/shreya/kendra-connector-react-app"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="22a4d588-032a-4b9b-8a84-53fef4c10750" name="Changes" comment="" />
-      <created>1693241080889</created>
+      <changelist id="7936a0ef-8a4a-4bdb-9b9a-27fe1c0e10d2" name="Changes" comment="" />
+      <created>1694455741427</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1693241080889</updated>
+      <updated>1694455741427</updated>
     </task>
     <servers />
   </component>

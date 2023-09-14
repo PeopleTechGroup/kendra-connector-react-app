@@ -7,8 +7,6 @@
     <list default="true" id="7936a0ef-8a4a-4bdb-9b9a-27fe1c0e10d2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Documentation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Documentation.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

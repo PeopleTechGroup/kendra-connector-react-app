@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Typography, Card, CardContent, makeStyles } from "@material-ui/core";
+import Footer from "./Footer";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -7,16 +8,24 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: "100%", // For small screens, display one card per row
     },
+
   },
 
 }));
 
+const Emoji = ({ label, symbol }) => (
+  <span role="img" aria-label={label}>
+    {symbol}
+  </span>
+);
+
 //  array of colors outside the useStyles function
 const cardColors = [
   "#E5F4FF",// Color for the second card,Color for the third card
-  "#E1DDDD",  // Color for the first card
-  "#DDEEFF",
-  // Add more colors as needed for additional cards
+  "#5199ED",  // Color for the first card
+  "#282c34",
+  "#FFFFFF"
+
 ];
 
 
@@ -24,6 +33,7 @@ const Documentation = () => {
   const classes = useStyles();
 
   return (
+   <div style={{ backgroundColor: "#E5F4FF" }}> {/* background color here */}
     <Grid container spacing={2}>
       {/* 0th row */}
       <Grid item xs={12}>
@@ -34,8 +44,8 @@ const Documentation = () => {
 
       {/* First row */}
       <Grid item xs={12} className={classes.card}>
-         <Card style={{ backgroundColor: cardColors[1] }}>
-          <CardContent>
+         <Card style={{ backgroundColor: cardColors[4], borderTop: "8px solid #282c34"}}>
+          <CardContent style={{ padding: "25px" }}>
             <Typography variant="h5" component="h5">
               Connectors
             </Typography>
@@ -52,8 +62,8 @@ const Documentation = () => {
 
       {/* Second row */}
       <Grid item xs={12} sm={6} md={4} lg={4} className={classes.card}>
-        <Card style={{ backgroundColor: cardColors[0] }}>
-          <CardContent>
+        <Card style={{ backgroundColor: cardColors[4], borderTop: "8px solid #5966DD"}}>
+          <CardContent style={{ padding: "20px" }}>
             <Typography variant="h5" component="h5">
               Why Kendra?
             </Typography>
@@ -64,12 +74,14 @@ const Documentation = () => {
               Amazon Kendra steps in as the ideal solution for your
               organization's search and discovery needs.
             </Typography>
-          </CardContent>
+           <Emoji label="Hand Pointer" symbol="👉" />{" "}
+               <a href="https://aws.amazon.com/kendra/" target="_blank">Dive Deeper</a>
+             </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={4} className={classes.card}>
-        <Card style={{ backgroundColor: cardColors[0] }}>
-          <CardContent>
+        <Card style={{ backgroundColor: cardColors[4], borderTop: "8px solid #5966DD" }}>
+          <CardContent style={{ padding: "20px" }}>
             <Typography variant="h5" component="h5">
               Alfresco On-Prem Connector
             </Typography>
@@ -77,14 +89,16 @@ const Documentation = () => {
               Alfresco connector for indexing and searching documents in Alfresco
               On-Prem Repository with support for aspect-based crawling.
             </Typography>
-          </CardContent>
+           <Emoji label="Hand Pointer" symbol="👉" />{" "}
+             <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-alfresco.html" target="_blank">Dive Deeper</a>
+           </CardContent>
         </Card>
       </Grid>
 
       {/* Third row */}
       <Grid item xs={12} sm={6} md={4} lg={4} className={classes.card}>
-        <Card style={{ backgroundColor: cardColors[0] }}>
-          <CardContent>
+        <Card style={{ backgroundColor: cardColors[4], borderTop: "8px solid #5966DD" }}>
+          <CardContent style={{ padding: "20px" }}>
             <Typography variant="h5" component="h5">
               Amazon Simple Storage Service (S3) Connector
             </Typography>
@@ -94,12 +108,14 @@ const Documentation = () => {
               to your Amazon Kendra index. Use the Kendra S3 Connector to also
               crawl Amazon S3 buckets in a secure environment like a VPC.
             </Typography>
+             <Emoji label="Hand Pointer" symbol="👉" />{" "}
+                <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-s3.html" target="_blank">Dive Deeper</a>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={4} className={classes.card}>
-        <Card style={{ backgroundColor: cardColors[0] }}>
-          <CardContent>
+        <Card style={{ backgroundColor: cardColors[4], borderTop: "8px solid #5966DD" }}>
+          <CardContent style={{ padding: "20px" }}>
             <Typography variant="h5" component="h5">
               GitHub On-Prem Connector
             </Typography>
@@ -107,14 +123,16 @@ const Documentation = () => {
               GitHub connector for indexing and searching documents in GitHub
               Enterprise Server data source.
             </Typography>
+             <Emoji label="Hand Pointer" symbol="👉" />{" "}
+                     <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html" target="_blank">Dive Deeper</a>
           </CardContent>
         </Card>
       </Grid>
 
       {/* Fourth row */}
       <Grid item xs={12} sm={6} md={4} lg={4} className={classes.card}>
-        <Card style={{ backgroundColor: cardColors[0] }}>
-          <CardContent>
+        <Card style={{ backgroundColor: cardColors[4],borderTop: "8px solid #5966DD" }}>
+          <CardContent style={{ padding: "20px" }}>
             <Typography variant="h5" component="h5">
               ServiceNow Connector
             </Typography>
@@ -124,12 +142,14 @@ const Documentation = () => {
               attachments from ServiceNow, and search for information across this
               content using Kendra Intelligent Search.
             </Typography>
+             <Emoji label="Hand Pointer" symbol="👉" />{" "}
+                           <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html" target="_blank">Dive Deeper</a>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={4} className={classes.card}>
-        <Card style={{ backgroundColor: cardColors[0] }}>
-          <CardContent>
+        <Card style={{ backgroundColor: cardColors[4], borderTop: "8px solid #5966DD" }}>
+          <CardContent style={{ padding: "20px" }}>
             <Typography variant="h5" component="h5">
               Microsoft SharePoint Online Connector
             </Typography>
@@ -138,10 +158,21 @@ const Documentation = () => {
               data in SharePoint Online repositories with support for document
               access attributes and SharePoint and Azure App Only Authentication.
             </Typography>
+             <Emoji label="Hand Pointer" symbol="👉" />{" "}
+                           <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-v2-sharepoint.html" target="_blank">Dive Deeper</a>
+
           </CardContent>
         </Card>
+
       </Grid>
+           <Grid item xs={12} sm={6} md={4} lg={4} >
+            <Footer/>
+           </Grid>
     </Grid>
+
+     </div>
+
+
   );
 };
 

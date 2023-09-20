@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+To initiate the process, run the following command initially:
+### `npm config set legacy-peer-deps true`
+This command configures npm (Node Package Manager) to allow the installation of packages even when they have peer dependency warnings, making it backward-compatible with older packages that may not adhere to modern peer dependency rules.
+
 ### `npm start`
 
 Runs the app in the development mode.\

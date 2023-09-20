@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Card, CardContent, Grid, Typography } from "@material-ui/core";
 import kendraOverview from "../images/kendraLogo.jpeg";
 import Footer from "./Footer"

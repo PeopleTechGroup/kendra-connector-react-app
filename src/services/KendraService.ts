@@ -16,7 +16,10 @@ const getKendraService: Function = (): KendraService => {
   const createKendraIndex = (
     createKendraObject: CreateKendraObject,
   ): Promise<KendraObject> => {
-    return axios.post(`http://localhost:8080/manage-index/create`, createKendraObject);
+    return axios.post(
+      `http://localhost:8080/manage-index/create`,
+      createKendraObject,
+    );
   };
 
   return {

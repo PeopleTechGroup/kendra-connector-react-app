@@ -9,7 +9,7 @@ import {
   Typography,
   TextField,
 } from "@material-ui/core";
-import PageTitle from "../AppComponents/PageTitle";
+import PageNavigation from "../AppComponents/PageNavigation";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -49,7 +49,7 @@ const ManageIndices = () => {
   return (
     <Grid container xs={12} spacing={5}>
       <Grid item xs={12}>
-        <PageTitle
+        <PageNavigation
           title="Kendra Indices"
           breadcrumbs={[{ title: "Home", href: "/" }, { title: "Indices" }]}
         />
@@ -59,9 +59,6 @@ const ManageIndices = () => {
         <Typography variant="h5" component="h5">
           <strong> Manage Kendra Indices </strong>
         </Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <CreateIndex />
       </Grid>
     </Grid>
   );

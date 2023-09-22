@@ -5,7 +5,7 @@ import {
   Typography,
   TextField,
 } from "@material-ui/core";
-import PageTitle from "../AppComponents/PageTitle";
+import PageNavigation from "../AppComponents/PageNavigation";
 
 import Button from "@mui/material/Button";
 import React, { useState, useEffect } from "react";
@@ -46,7 +46,7 @@ const CreateIndex = () => {
       .createKendraIndex({name: indexName,
                           description: indexDescription})
       .then((response) => {
-        return response.data.token;
+        return response.data.id;
       })
       .catch((error) => {
         console.log(error);
@@ -63,12 +63,13 @@ const CreateIndex = () => {
       style={{ padding: 20 }}
       component={Paper}
     >
-      <Grid item xs={12} justifyContent="center">
-        <Typography variant="h4" component="h4">
-          <strong> New Kendra Index </strong>
-        </Typography>
-        <br />
-      </Grid>
+
+      <Grid item xs={12}>
+              <PageNavigation
+                title="New Kendra Index"
+                breadcrumbs={[{ title: "Home", href: "/" }, { title: "Indices" }]}
+              />
+            </Grid>
       <Grid
         container
         item

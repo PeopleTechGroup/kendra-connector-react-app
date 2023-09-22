@@ -13,7 +13,7 @@ export interface PageTitleProps {
   breadcrumbs: Array<BreadCrumb>;
   rightNav?: Array<BreadCrumb>;
 }
-const PageTitle = (props: PageTitleProps) => {
+const PageNavigation = (props: PageTitleProps) => {
   const { title, breadcrumbs, rightNav } = props;
 
   const renderLink = (
@@ -75,4 +75,4 @@ const PageTitle = (props: PageTitleProps) => {
   );
 };
 
-export default PageTitle;
+export default PageNavigation;

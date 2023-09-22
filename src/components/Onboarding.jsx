@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, Grid, Typography, Link } from "@material-ui/core";
-import Footer from "./Footer";
+import Footer from "./AppComponents/Footer";
 
 const Step = ({ title, description }) => (
   <Grid item xs={12} style={{ padding: "20px 0" }}>
@@ -33,13 +33,19 @@ const Onboarding = () => {
                 <ul>
                   <li>
                     <Emoji label="Hand Pointer" symbol="👉" />{" "}
-                    <Link href="https://aws.amazon.com/kendra/connectors/" target="_blank">
+                    <Link
+                      href="https://aws.amazon.com/kendra/connectors/"
+                      target="_blank"
+                    >
                       AWS Kendra Connectors
                     </Link>
                   </li>
                   <li>
                     <Emoji label="Hand Pointer" symbol="👉" />{" "}
-                    <Link href="https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html" target="_blank">
+                    <Link
+                      href="https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html"
+                      target="_blank"
+                    >
                       Data Sources in Kendra
                     </Link>
                   </li>
@@ -63,7 +69,10 @@ const Onboarding = () => {
                 Clone the Java SpringBoot application repository:
                 <br />
                 <Emoji label="Hand Pointer" symbol="👉" />{" "}
-                <Link href="https://github.com/orgs/PeopleTechGroup/repositories" target="_blank">
+                <Link
+                  href="https://github.com/orgs/PeopleTechGroup/repositories"
+                  target="_blank"
+                >
                   Java SpringBoot Repository
                 </Link>
               </>
@@ -77,16 +86,24 @@ const Onboarding = () => {
                 <ul>
                   <li>
                     <Emoji label="Hand Pointer" symbol="👉" /> Clone:{" "}
-                    <Link href="https://github.com/PeopleTechGroup/kendra-connector-react-app" target="_blank">
+                    <Link
+                      href="https://github.com/PeopleTechGroup/kendra-connector-react-app"
+                      target="_blank"
+                    >
                       React App Repository
                     </Link>
                   </li>
                   <li>
-                    <Emoji label="Hand Pointer" symbol="👉" /> Install dependencies:
+                    <Emoji label="Hand Pointer" symbol="👉" /> Install
+                    dependencies:
                     <pre>
-                      npm install @mui/material @emotion/react @emotion/styled --legacy-peer-deps<br />
-                      npm install @mui/icons-material --legacy-peer-deps<br />
-                      npm install react-router-dom<br />
+                      npm install @mui/material @emotion/react @emotion/styled
+                      --legacy-peer-deps
+                      <br />
+                      npm install @mui/icons-material --legacy-peer-deps
+                      <br />
+                      npm install react-router-dom
+                      <br />
                       npm install @material-ui/icons --force
                     </pre>
                   </li>
@@ -98,7 +115,12 @@ const Onboarding = () => {
             title="Step 4: Obtain AWS IAM and Access Keys"
             description={
               <>
-                Request AWS IAM role Access Key and Password, as well as AWS Access Key and Secret Key for accessing the backend code base. Email: <Link href="mailto:sreenivasulu.dasari@peopletech.com">sreenivasulu.dasari@peopletech.com</Link>
+                Request AWS IAM role Access Key and Password, as well as AWS
+                Access Key and Secret Key for accessing the backend code base.
+                Email:{" "}
+                <Link href="mailto:sreenivasulu.dasari@peopletech.com">
+                  sreenivasulu.dasari@peopletech.com
+                </Link>
               </>
             }
           />

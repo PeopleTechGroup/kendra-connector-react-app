@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "BrandonFont"; /* Name your font */
+  src:
+    url("./assets/fonts/FontsFree-Net-Brandon.ttf") format("ttf"),
+    url("./assets/fonts/FontsFree-Net-Brandon.ttf") format("ttf");
+  /* Add additional formats if needed */
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import {
-	AppBar,
-	Toolbar,
-	IconButton,
-	Typography,
-	InputBase,
 	Collapse,
 	Drawer,
 	List,
@@ -19,6 +14,7 @@ import { Link } from "react-router-dom";
 import ListItemButton from '@mui/material/ListItemButton';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import Header from "./Header";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -123,43 +119,13 @@ const NavBar = () => {
 
     return(
     <div className={classes.grow}>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="menu"
-                        onClick={toggleDrawer(true)}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" className={classes.grow}>
-                       Kendra Connector Management
-                    </Typography>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
-                        </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            inputProps={{ "aria-label": "search" }}
-                            value={searchValue}
-                            onChange={handleSearchChange}
-                            onKeyPress={(event: any) => {
-                                if (event.key === "Enter") {
-                                   return null;
-                                }
-                            }}
-                        />
-                    </div>
-                    <div className={classes.grow} />
-                </Toolbar>      {/* The Toolbar with items to be visible in the home page header */}
-           </AppBar>  {/* The Appbar in the home page header */}
+
+           <Header 
+            toggleDrawer={toggleDrawer}
+            classes={classes}
+            searchValue={searchValue}
+            handleSearchChange={handleSearchChange}
+            />
            <Drawer open={isDrawerOpen} onClose={toggleDrawer(false)} classes={{ paper: classes.drawerPaper }}>
            <List> {/* The Drawer to pop-out of the hamburger menu */}
                 <ListItem button  component={Link} to="/">
@@ -241,6 +207,7 @@ const NavBar = () => {
            </List>
            </Drawer>
         </div>
+        
     );
 };
 

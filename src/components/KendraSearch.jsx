@@ -8,13 +8,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
-import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
-// or
-// import { IconButton } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import Footer from "./Footer";
@@ -26,20 +22,30 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
-const output = (
-    <p>This is the output.</p>
-  );
+
 const KendraSearch= () =>{
 const [index, setIndex] = React.useState('');
+const [results, setResults] = React.useState('');
+const [query, setQuery] = React.useState('Enter your query here!');
+
 const handleChange = (event: SelectChangeEvent) => {
     setIndex(event.target.value);
 };
 
+const handleDelete = () => {
+    // Clear the text field when the delete button is clicked
+    setQuery('');
+    setResults('');
+};
+
+const handleSubmit = () => {
+    setResults('Calculated results are shown here!');
+}
+
  return (
  <Box sx={{ width: '100%' }}>
-     <div >
-           <Grid container direction="column" alignItems="center" style={{ marginTop: "2%" }} spacing={4}>
-             <Grid xs={6}>
+           <Grid container style={{ marginTop: "2%" }} spacing={2}>
+             <Grid item xs={12}>
                <Item>
                    <Typography variant="h4" gutterBottom>
                        Kendra Index Search
@@ -59,26 +65,31 @@ const handleChange = (event: SelectChangeEvent) => {
                             </Select>
                     </FormControl>
                     <div sx={{ m: 1, minWidth: 500 }} >
-                        <TextField
+                            <TextField
                                   id="outlined-multiline-static"
                                   label="Query"
                                   placeholder="Placeholder"
                                   multiline
                                   rows={4}
-                                  defaultValue="Enter your query here!"
-                                />
-                                <Button onClick={handleChange} startIcon={<DeleteIcon />}></Button>
-                                <Stack direction="row" spacing={4} justifyContent="right">
-                                      <Button onClick={handleChange} endIcon={<SendIcon />}></Button>
-                                </Stack>
+                                  value={query}
+                                  onChange={(e) => setQuery(e.target.value)}
+                            />
+                            <IconButton onClick={handleDelete} aria-label="delete">
+                                <DeleteIcon />
+                            </IconButton>
+                            <IconButton onClick={handleSubmit} aria-label="submit">
+                                <SendIcon />
+                            </IconButton>
+{/*                                 <Button onClick={handleChange} startIcon={<DeleteIcon />}></Button> */}
+{/*                                 <Stack direction="row" spacing={4} justifyContent="right"> */}
+{/*                                       <Button onClick={handleChange} endIcon={<SendIcon />}></Button> */}
+{/*                                 </Stack> */}
                     </div>
               </Item>
              </Grid>
          </Grid>
-    </div>
-    <div>
-        <Grid container direction="column" alignItems="center" style={{ marginTop: "2%" }} spacing={4}>
-             <Grid xs={6}>
+        <Grid container style={{ marginTop: "2%" }} spacing={2}>
+             <Grid item xs={12}>
                <Item>
                    <Typography variant="h4" gutterBottom>
                       Kendra Index Query Results
@@ -91,18 +102,17 @@ const handleChange = (event: SelectChangeEvent) => {
                                  multiline
                                  rows={4}
                                  overflow="scroll"
+                                 value={results}
+                                 onChange={(e) => setResults(e.target.value)}
                                />
-{/*                            <Button onClick={handleChange} startIcon={<DeleteIcon />}> */}
-{/*                            </Button> */}
                    </div>
                </Item>
              </Grid>
         </Grid>
-    </div>
     <div>
-     <Grid item xs={12} sm={6} md={4} lg={4} style={{ marginTop: "2%" }} spacing={4}>
-                 <Footer/>
-                </Grid>
+         <Grid item xs={12} sm={6} md={4} lg={4} style={{ marginTop: "2%" }} spacing={4}>
+            <Footer/>
+         </Grid>
      </div>
  </Box>
 

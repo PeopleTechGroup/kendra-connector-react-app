@@ -8,8 +8,6 @@ import {
 	ListItemText,
 	Grid,
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
 import ListItemButton from '@mui/material/ListItemButton';
 import ExpandLess from '@mui/icons-material/ExpandLess';

@@ -1,4 +1,3 @@
-// header.test.jsx
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import Header from 'components/Header.tsx';

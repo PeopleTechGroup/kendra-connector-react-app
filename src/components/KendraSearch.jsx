@@ -64,27 +64,24 @@ const handleSubmit = () => {
                               <MenuItem value={30}>Index 3</MenuItem>
                             </Select>
                     </FormControl>
-                    <div sx={{ m: 1, minWidth: 500 }} >
-                            <TextField
-                                  id="outlined-multiline-static"
-                                  label="Query"
-                                  placeholder="Placeholder"
-                                  multiline
-                                  rows={4}
-                                  value={query}
-                                  onChange={(e) => setQuery(e.target.value)}
-                            />
-                            <IconButton onClick={handleDelete} aria-label="delete">
-                                <DeleteIcon />
-                            </IconButton>
-                            <IconButton onClick={handleSubmit} aria-label="submit">
-                                <SendIcon />
-                            </IconButton>
-{/*                                 <Button onClick={handleChange} startIcon={<DeleteIcon />}></Button> */}
-{/*                                 <Stack direction="row" spacing={4} justifyContent="right"> */}
-{/*                                       <Button onClick={handleChange} endIcon={<SendIcon />}></Button> */}
-{/*                                 </Stack> */}
-                    </div>
+                      <div sx={{ display: 'flex', m: 1, minWidth: 1000 }}>
+                        <TextField
+                          id="outlined-multiline-static"
+                          label="Query"
+                          placeholder="Placeholder"
+                          multiline
+                          rows={4}
+                          value={query}
+                          onChange={(e) => setQuery(e.target.value)}
+                          fullWidth
+                        />
+                        <IconButton onClick={handleSubmit} aria-label="submit" >
+                          <SendIcon />
+                        </IconButton>
+                        <IconButton onClick={handleDelete} aria-label="delete" >
+                          <DeleteIcon />
+                        </IconButton>
+                      </div>
               </Item>
              </Grid>
          </Grid>
@@ -94,18 +91,20 @@ const handleSubmit = () => {
                    <Typography variant="h4" gutterBottom>
                       Kendra Index Query Results
                    </Typography>
-                   <div sx={{ m: 1, minWidth: 500 }} >
                        <TextField
-                                 id="outlined-multiline-static"
-                                 label="Query Results"
-                                 placeholder="Placeholder"
-                                 multiline
-                                 rows={4}
-                                 overflow="scroll"
-                                 value={results}
-                                 onChange={(e) => setResults(e.target.value)}
-                               />
-                   </div>
+                             id="outlined-multiline-static"
+                             label="Query Results"
+                             placeholder="Placeholder"
+                             multiline
+                             rows={4}
+                             fullWidth
+                             InputProps={{
+                                 readOnly: true, // Make the input read-only
+                                 style: { overflowY: 'scroll' }, // Add a scroll bar when content exceeds 4 rows
+                             }}
+                             value={results}
+                             onChange={(e) => setResults(e.target.value)}
+                       />
                </Item>
              </Grid>
         </Grid>

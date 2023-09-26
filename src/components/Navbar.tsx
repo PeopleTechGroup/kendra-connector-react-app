@@ -129,9 +129,6 @@ const NavBar = () => {
                 <ListItem button  component={Link} to="/">
                 		<ListItemText primary="Home" />
                 </ListItem>
-                <ListItem button  component={Link} to="/kendraHome">
-                        <ListItemText primary="AWS Kendra Service" />
-                </ListItem>
                 <ListItem>
                     <Grid item data-testid="documentation">
                         <ListItemButton
@@ -144,18 +141,22 @@ const NavBar = () => {
                         </ListItemButton>
                     </Grid>
                 </ListItem>
-                 <ListItem>
-                      <Grid item data-testid="Onboarding Process">
+                <ListItem>
+                    <Grid item data-testid="Onboarding Process">
                           <ListItemButton
-//                           data-testid="kendraIndexes"
+                           data-testid="kendraIndexes"
                           component={Link}
                            to="/onboardingProcess"
                            onClick={handleClick}>
                              {/*List item icon can placed here*/}
                            <ListItemText primary="Onboarding" />
                            </ListItemButton>
-                           </Grid>
+                    </Grid>
                 </ListItem>
+                <ListItem button  component={Link} to="/kendraHome">
+                        <ListItemText primary="AWS Kendra Service" />
+                </ListItem>
+
                 <ListItem>
                     <Grid item data-testid="documentation">
                         <ListItemButton
@@ -168,6 +169,20 @@ const NavBar = () => {
                         </ListItemButton>
                     </Grid>
                 </ListItem>
+
+                 <ListItem>
+                    <Grid item data-testid="kerndraSearch">
+                        <ListItemButton
+                        data-testid="kendraIndexes"
+                        component={Link}
+                        to="/kendraSearch"
+                        onClick={handleClick}>
+                            {/*List item icon can placed here*/}
+                            <ListItemText primary="Kendra Index Search " />
+                        </ListItemButton>
+                    </Grid>
+                </ListItem>
+
                 <ListItem button  component={Link} to="/">
                         <ListItemText primary="AWS Kendra DataSources" />
                 </ListItem>

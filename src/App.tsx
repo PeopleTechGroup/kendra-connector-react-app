@@ -9,7 +9,6 @@ import Documentation from "./components/Documentation";
 import Onboarding from "./components/Onboarding";
 import KendraSearch from "./components/KendraSearch";
 
-
 function App() {
   return (
     <div className="App">

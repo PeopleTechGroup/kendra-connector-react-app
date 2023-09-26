@@ -11,7 +11,14 @@ import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import DirectionsIcon from '@mui/icons-material/Directions';
 
 import Footer from "./Footer";
 
@@ -64,24 +71,29 @@ const handleSubmit = () => {
                               <MenuItem value={30}>Index 3</MenuItem>
                             </Select>
                     </FormControl>
-                      <div sx={{ display: 'flex', m: 1, minWidth: 1000 }}>
-                        <TextField
-                          id="outlined-multiline-static"
-                          label="Query"
-                          placeholder="Placeholder"
-                          multiline
-                          rows={4}
-                          value={query}
-                          onChange={(e) => setQuery(e.target.value)}
-                          fullWidth
-                        />
-                        <IconButton onClick={handleSubmit} aria-label="submit" >
-                          <SendIcon />
-                        </IconButton>
-                        <IconButton onClick={handleDelete} aria-label="delete" >
-                          <DeleteIcon />
-                        </IconButton>
-                      </div>
+
+                    <Paper
+                          component="form"
+                          sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}
+                        >
+                          <InputBase
+                            id="outlined-multiline-static"
+                            label="Query "
+                            placeholder="Enter your Query"
+                            multiline
+                            rows={4}
+                            fullWidth
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                          />
+                          <IconButton onClick={handleSubmit} type="button" sx={{ p: '10px' }} aria-label="search">
+                            <SearchIcon />
+                          </IconButton>
+                          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+                          <IconButton onClick={handleDelete} color="primary" sx={{ p: '10px' }} aria-label="delete">
+                            <DeleteIcon />
+                          </IconButton>
+                        </Paper>
               </Item>
              </Grid>
          </Grid>
@@ -91,10 +103,14 @@ const handleSubmit = () => {
                    <Typography variant="h4" gutterBottom>
                       Kendra Index Query Results
                    </Typography>
-                       <TextField
+                   <Paper
+                     component="form"
+                     sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}
+                   >
+                       <InputBase
                              id="outlined-multiline-static"
                              label="Query Results"
-                             placeholder="Placeholder"
+                             placeholder="Query Results"
                              multiline
                              rows={4}
                              fullWidth
@@ -105,6 +121,7 @@ const handleSubmit = () => {
                              value={results}
                              onChange={(e) => setResults(e.target.value)}
                        />
+                   </Paper>
                </Item>
              </Grid>
         </Grid>

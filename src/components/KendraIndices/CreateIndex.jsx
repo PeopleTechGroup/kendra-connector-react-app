@@ -4,14 +4,22 @@ import {
   Paper,
   Typography,
   TextField,
+  Card,
+  CardContent
 } from "@material-ui/core";
 import PageNavigation from "../AppComponents/PageNavigation";
 
 import Button from "@mui/material/Button";
 import React, { useState, useEffect } from "react";
 import kendraService from "../../services/KendraService";
+
 import { makeStyles } from "@material-ui/core/styles";
 import { Item } from "semantic-ui-react";
+import Footer from "../AppComponents/Footer";
+import InputLabel from '@mui/material/InputLabel';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,9 +33,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+interface KendraObject {
+      name: string;
+      description: string;
+      id: string;
+}
+
 const CreateIndex = () => {
+
   const [indexName, setIndexName] = useState("test");
   const [indexDescription, setIndexDescription] = useState("test");
+  const [indexId, setIndexId] = React.useState('');
+  const [indices, setIndices] = React.useState([{
+                                                    id: "20b9eab9-4d6a-454d-81bc-236d0b460d68",
+                                                    description: "Test2"
+                                                  }]);
+  const [indexText, setIndexText] = React.useState('');
+
   const classes = useStyles();
 
   const handleIndexNameChange = (event: React.ChangeEvent<{ value: unknown }>) => {
@@ -40,20 +62,57 @@ const CreateIndex = () => {
   		setIndexDescription(event.target.value );
   	};
 
+  const handleIndexChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  console.log("Inside the handleIndexChange", indexId);
+        setIndexId(event.target.value);
+  };
+
   const saveKendraIndex = () => {
     console.log("IndexName and IndexDescription ", indexName, indexDescription);
     kendraService
       .createKendraIndex({name: indexName,
                           description: indexDescription})
       .then((response) => {
-        return response.data.id;
+           console.log(response);
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
+  const getQueryResults = () => {
+      console.log("Inside the getQueryResults ");
+      kendraService
+        .getQueryResults("test","test")
+        .then((response) => {
+             console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+  const fetchKendraIndices = async (): Promise<void> => {
+  		const kendraIndices = await kendraService.getKendraIndices();
+  		console.log("Inside the fetchKendraIndices", kendraIndices.data);
+  		setIndices(kendraIndices.data);
+
+       console.log("After inside the fetchKendraIndices", indices);
+  };
+
+    useEffect((): void => {
+        fetchKendraIndices();
+    }, []);
+
+  const handleKendraIndexSelected = (id: string, description: string) => {
+    console.log("Inside the kendraIndexSelected");
+    setIndexId(description);
+    setIndexText(id);
+  }
+
   return (
+  <Card style={{ padding: 20 }}>
+  <CardContent>
     <Grid
       container
       item
@@ -69,7 +128,7 @@ const CreateIndex = () => {
                 title="New Kendra Index"
                 breadcrumbs={[{ title: "Home", href: "/" }, { title: "Indices" }]}
               />
-            </Grid>
+      </Grid>
       <Grid
         container
         item
@@ -143,7 +202,14 @@ const CreateIndex = () => {
         </Button>
         <br />
       </Grid>
+
+
+      <Grid item xs={12} style={{ padding: 20 }}>
+        <Footer />
+      </Grid>
     </Grid>
+    </CardContent>
+    </Card>
   );
 };
 

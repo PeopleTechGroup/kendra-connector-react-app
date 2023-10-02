@@ -177,6 +177,17 @@ const NavBar = () => {
           <ListItem button component={Link} to="/">
             <ListItemText primary="Home" />
           </ListItem>
+          <ListItem>
+            <Grid item data-testid="Onboarding Process">
+              <ListItemButton
+                component={Link}
+                to="/onboardingProcess"
+                onClick={handleClick}
+              >
+                <ListItemText primary="Onboarding" />
+              </ListItemButton>
+            </Grid>
+          </ListItem>
           <ListItem button component={Link} to="/kendraHome">
             <ListItemText primary="AWS Kendra Service" />
           </ListItem>
@@ -193,24 +204,13 @@ const NavBar = () => {
             </Grid>
           </ListItem>
           <ListItem>
-            <Grid item data-testid="Onboarding Process">
-              <ListItemButton
-                component={Link}
-                to="/onboardingProcess"
-                onClick={handleClick}
-              >
-                <ListItemText primary="Onboarding" />
-              </ListItemButton>
-            </Grid>
-          </ListItem>
-          <ListItem>
             <Grid item data-testid="documentation">
               <ListItemButton
                 onClick={handleIndicesExpand}
                 component={Link}
                 to="/kendraIndexes"
               >
-                <ListItemText primary="Manage Kendra Indices" />
+                <ListItemText primary="AWS Kendra Indices" />
                 {indexExpand ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
               <Collapse in={indexExpand} timeout="auto" unmountOnExit>
@@ -221,6 +221,24 @@ const NavBar = () => {
                     to="/createKendraIndex"
                   >
                     <ListItemText primary="Create Index" />
+                  </ListItemButton>
+                </List>
+                <List component="div" disablePadding>
+                  <ListItemButton
+                    sx={{ pl: 4 }}
+                    component={Link}
+                    to="/manageKendraIndices"
+                  >
+                    <ListItemText primary="Manage Indices" />
+                  </ListItemButton>
+                </List>
+                <List component="div" disablePadding>
+                  <ListItemButton
+                    sx={{ pl: 4 }}
+                    component={Link}
+                    to="/kendraSearch"
+                  >
+                    <ListItemText primary="Search Indices" />
                   </ListItemButton>
                 </List>
               </Collapse>

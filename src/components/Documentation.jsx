@@ -7,6 +7,7 @@ import {
   CardContent,
   makeStyles,
 } from "@material-ui/core";
+import Footer from "./AppComponents/Footer";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -229,6 +230,9 @@ const Documentation = () => {
                 Dive Deeper
               </a>
             </CardContent>
+            <Grid item xs={12} style={{ padding: 20 }}>
+              <Footer />
+            </Grid>
           </Card>
         </Grid>
       </Grid>

@@ -4,4 +4,4 @@
 
 */
 
-export const KENDRA_SERVICE_BASE_URL = "/asn-errors";
+export const KENDRA_SERVICE_BASE_URL = "/errors";

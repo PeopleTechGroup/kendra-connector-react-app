@@ -7,6 +7,8 @@ import { Container } from "@material-ui/core";
 import { Route, Routes } from "react-router-dom";
 import Documentation from "./components/Documentation";
 import ManageIndices from "./components/KendraIndices/ManageIndices";
+import ManageKendraIndices from "./components/KendraIndices/ManageKendraIndices";
+import KendraSearch from "./components/KendraIndices/KendraSearch";
 import Onboarding from "./components/Onboarding";
 import CreateIndex from "./components/KendraIndices/CreateIndex";
 
@@ -25,7 +27,11 @@ function App() {
           <Route path="/onboardingProcess" element={<Onboarding />} />
           <Route path="/kendraIndexes" element={<ManageIndices />} />
           <Route path="/createKendraIndex" element={<CreateIndex />} />
-          <Route path="/manageKendraIndex" element={<ManageIndices />} />
+          <Route
+            path="/manageKendraIndices"
+            element={<ManageKendraIndices />}
+          />
+          <Route path="/kendraSearch" element={<KendraSearch />} />
         </Routes>
       </Container>
     </div>
